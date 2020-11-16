@@ -22,12 +22,12 @@ jobs:
             })
             return pull_request.data.head.ref
       - name: Deploy UIReview
-        if: github.event.comment.body == '!github deploy-uireview'
+        if: github.event.comment.body == '@github deploy-uireview'
         run: |
           echo deploy uireview
           echo ${{ steps.set-target-branch.outputs.result }}
       - name: Deploy Staging
-        if: github.event.comment.body == '!github deploy-staging'
+        if: github.event.comment.body == '@github deploy-staging'
         run: |
           echo deploy staging
           echo ${{ steps.set-target-branch.outputs.result }}
